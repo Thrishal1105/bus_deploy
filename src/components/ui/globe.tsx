@@ -81,23 +81,46 @@ export function Globe({
     window.addEventListener("resize", onResize)
     onResize()
 
-    if (!canvasRef.current) return
+    if (!canvasRef.current) {
+      window.removeEventListener("resize", onResize)
+      return
+    }
 
-    const globe = createGlobe(canvasRef.current, {
-      ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender,
-    })
+    // Check if WebGL is available
+    const gl = canvasRef.current.getContext('webgl') || canvasRef.current.getContext('experimental-webgl')
+    if (!gl) {
+      console.warn('WebGL not supported, Globe component will not render')
+      window.removeEventListener("resize", onResize)
+      return
+    }
 
-    setTimeout(() => {
-      if (canvasRef.current) {
-        canvasRef.current.style.opacity = "1"
-      }
-    })
+    let globe: any = null
+
+    try {
+      globe = createGlobe(canvasRef.current, {
+        ...config,
+        width: width * 2,
+        height: width * 2,
+        onRender,
+      })
+
+      setTimeout(() => {
+        if (canvasRef.current) {
+          canvasRef.current.style.opacity = "1"
+        }
+      }, 100)
+    } catch (error) {
+      console.error('Error creating globe:', error)
+    }
     
     return () => {
-      globe.destroy()
+      if (globe) {
+        try {
+          globe.destroy()
+        } catch (error) {
+          console.error('Error destroying globe:', error)
+        }
+      }
       window.removeEventListener("resize", onResize)
     }
   }, [onRender, config])
