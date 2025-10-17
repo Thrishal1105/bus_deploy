@@ -81,16 +81,26 @@ export function Globe({
     window.addEventListener("resize", onResize)
     onResize()
 
-    const globe = createGlobe(canvasRef.current!, {
+    if (!canvasRef.current) return
+
+    const globe = createGlobe(canvasRef.current, {
       ...config,
       width: width * 2,
       height: width * 2,
       onRender,
     })
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"))
-    return () => globe.destroy()
-  }, [])
+    setTimeout(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1"
+      }
+    })
+    
+    return () => {
+      globe.destroy()
+      window.removeEventListener("resize", onResize)
+    }
+  }, [onRender, config])
 
   return (
     <div
