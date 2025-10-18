@@ -42,14 +42,14 @@ const ScrollCard = forwardRef<HTMLElement, ScrollCardProps>(({ cardsData, header
               {cardsData.map((card, i) => (
                 <figure key={i} className='sticky top-0 h-screen grid place-content-center'>
                   <article
-                    className={`h-80 w-full max-w-2xl rounded-2xl ${card.rotation} p-8 grid gap-6 shadow-2xl backdrop-blur-sm border-2 border-white/10`}
-                    style={{ backgroundColor: card.color }}
+                    className={`h-80 w-full max-w-2xl rounded-2xl ${card.rotation} p-8 grid gap-6 shadow-2xl backdrop-blur-sm border-2 border-white/10 transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_-15px_rgba(0,123,255,0.4)] animate-fade-in cursor-pointer group`}
+                    style={{ background: card.color }}
                   >
-                    <div className='p-4 rounded-xl bg-white/20 inline-flex w-fit'>
-                      <card.icon className='w-8 h-8 text-white' />
+                    <div className='p-4 rounded-xl bg-white/20 inline-flex w-fit transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3'>
+                      <card.icon className='w-8 h-8 text-white transition-all duration-300 group-hover:scale-110' />
                     </div>
-                    <h1 className='text-3xl font-bold text-white'>{card.title}</h1>
-                    <p className='text-white/90 text-lg leading-relaxed'>{card.description}</p>
+                    <h1 className='text-3xl font-bold text-white transition-all duration-300 group-hover:translate-x-2'>{card.title}</h1>
+                    <p className='text-white/90 text-lg leading-relaxed transition-opacity duration-300 group-hover:text-white'>{card.description}</p>
                   </article>
                 </figure>
               ))}
