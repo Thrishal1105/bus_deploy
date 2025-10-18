@@ -34,7 +34,7 @@ const Download = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 min-w-[200px]"
+              className="border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-105 min-w-[200px]"
             >
               <Github className="w-5 h-5 mr-2" />
               View Source
