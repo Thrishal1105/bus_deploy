@@ -4,10 +4,10 @@ import About from "@/components/About";
 import HowItWorks from "@/components/HowItWorks";
 import TechStack from "@/components/TechStack";
 import Features from "@/components/Features";
-import Comparison from "@/components/Comparison";
 import Screenshots from "@/components/Screenshots";
 import Download from "@/components/Download";
 import Insights from "@/components/Insights";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 
 const Index = () => {
@@ -27,12 +27,12 @@ const Index = () => {
       <div id="features">
         <Features />
       </div>
-      <Comparison />
       <Screenshots />
       <div id="download">
         <Download />
       </div>
       <Insights />
+      <FAQ />
       <div id="contact">
         <Contact />
       </div>
