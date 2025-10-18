@@ -29,20 +29,13 @@ const Hero = () => {
             Live bus tracking at low cost — perfect for schools, colleges & small fleets
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center items-center">
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent-glow text-accent-foreground shadow-glow transition-all duration-300 hover:scale-105"
             >
               <Download className="w-5 h-5 mr-2" />
               Download APK
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
-            >
-              View Demo
             </Button>
           </div>
         </div>
