@@ -32,23 +32,8 @@ const Contact = () => {
               <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               GitHub Repo
             </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="min-w-[200px] group"
-            >
-              <GlobeIcon className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Portfolio
-            </Button>
           </div>
 
-          {/* Footer */}
-          <div className="pt-12 border-t border-border">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Real-Time IoT Bus Tracking System. Built with passion for better transportation.
-            </p>
-          </div>
         </div>
       </div>
     </section>
