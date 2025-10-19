@@ -28,9 +28,12 @@ const Contact = () => {
               variant="outline" 
               size="lg"
               className="min-w-[200px] group"
+              asChild
             >
-              <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              GitHub Repo
+              <a href="https://github.com/Thrishal1105/Bus_Tracker.git" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                GitHub Repo
+              </a>
             </Button>
           </div>
 

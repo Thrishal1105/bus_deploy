@@ -17,7 +17,7 @@ const FAQ = () => {
     },
     {
       question: "How much does the hardware cost per bus?",
-      answer: "Our IoT hardware solution is designed to be affordable, with costs ranging from $50-$150 per bus depending on the configuration and features selected. This low-cost approach makes it accessible for educational institutions and small fleet operators with budget constraints."
+      answer: "Our IoT hardware solution is designed to be affordable, with costs ranging from $100 to $150 per bus depending on the configuration and features selected. This low-cost approach makes it accessible for educational institutions and small fleet operators with budget constraints."
     },
     {
       question: "Can the system handle multiple bus routes?",

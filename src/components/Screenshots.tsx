@@ -4,20 +4,26 @@ const Screenshots = () => {
   // Placeholder for app screenshots
   const screenshots = [
     {
-      title: "Live Map View",
-      description: "Real-time bus tracking on interactive map",
-      alt: "Map view showing bus location",
+      title: "IoT Hardware",
+      description: "IoT hardware for tracking the bus",
+      alt: "IoT hardware screen",
+      image: "https://res.cloudinary.com/dalmvzwgj/image/upload/v1760876075/1750957789518_qzkwqu.jpg",
     },
     {
-      title: "Bus Details",
-      description: "Route information and ETA display",
-      alt: "Bus detail screen",
+      title: "Dashboard",
+      description: "Dashboard for monitoring bus locations and status",
+      alt: "Dashboard screen",
+      image: "https://res.cloudinary.com/dalmvzwgj/image/upload/v1760876075/1750957789464_kvsyvp.jpg",
+      imgClassName: "w-11/12 h-full object-contain mx-auto" // Increased image size slightly
     },
     {
-      title: "Notifications",
-      description: "Arrival alerts and delay updates",
-      alt: "Notification screen",
+      title: "Bus Route View",
+      description: "View the route of the bus",
+      alt: "Bus route view screen",
+      image: "https://res.cloudinary.com/dalmvzwgj/image/upload/v1760876075/1750957788900_xzaqdl.jpg",
+      imgClassName: "w-11/12 h-full object-contain mx-auto" // Increased image size slightly
     },
+    
   ];
 
   return (
@@ -32,21 +38,32 @@ const Screenshots = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {screenshots.map((screenshot, index) => (
             <Card
               key={index}
-              className="overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 group"
+              className="overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 group max-w-sm mx-auto"
             >
               <div className="aspect-[9/16] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative overflow-hidden">
-                {/* Placeholder graphic */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f0a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f0a_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                <div className="relative z-10 text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">📱</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{screenshot.alt}</p>
-                </div>
+                {screenshot.image ? (
+                  // Show actual image for IoT Hardware
+                  <img 
+                    src={screenshot.image} 
+                    alt={screenshot.alt}
+                    className={screenshot.imgClassName || "w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"}
+                  />
+                ) : (
+                  // Show placeholder for other screenshots
+                  <>
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f0a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f0a_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                    <div className="relative z-10 text-center p-6">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-2xl">📱</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{screenshot.alt}</p>
+                    </div>
+                  </>
+                )}
               </div>
               <div className="p-4 bg-card">
                 <h3 className="font-bold text-card-foreground mb-1">

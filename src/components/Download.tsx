@@ -19,25 +19,31 @@ const Download = () => {
           </h2>
           
           <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-            Try our IoT bus tracking system today. Download the APK, watch the demo, or check out the source code.
+            Try our IoT bus tracking system today. Download the APK, check out the source code.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent-glow text-accent-foreground shadow-glow transition-all duration-300 hover:scale-105 min-w-[200px]"
+              asChild
             >
-              <DownloadIcon className="w-5 h-5 mr-2" />
-              Download APK
+              <a href="/app-release.apk" download="BusTracker.apk">
+                <DownloadIcon className="w-5 h-5 mr-2" />
+                Download APK
+              </a>
             </Button>
             
             <Button 
               size="lg" 
               variant="outline"
               className="border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-105 min-w-[200px]"
+              asChild
             >
-              <Github className="w-5 h-5 mr-2" />
-              View Source
+              <a href="https://github.com/Thrishal1105/Bus_Tracker.git" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5 mr-2" />
+                View Source
+              </a>
             </Button>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { Cpu, Server, Database, Smartphone, Map, Globe as GlobeIcon } from "luci
 
 const TechStack = () => {
   const technologies = [
-    { name: "ESP32 / iMotive A7670E", icon: Cpu, category: "IoT Hardware" },
+    { name: "ESP32 S3/ iMotive A7670E", icon: Cpu, category: "IoT Hardware" },
     { name: "Node.js + Express", icon: Server, category: "Backend" },
     { name: "MySQL", icon: Database, category: "Database" },
     { name: "Flutter (Dart)", icon: Smartphone, category: "Mobile App" },

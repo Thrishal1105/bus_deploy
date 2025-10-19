@@ -26,7 +26,7 @@ const ScrollCard = forwardRef<HTMLElement, ScrollCardProps>(({ cardsData, header
             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
 
             <div className='relative z-10 text-center'>
-              <h1 className='2xl:text-7xl text-5xl px-8 font-semibold tracking-tight leading-[120%] mb-4'>
+              <h1 className='text-3xl md:text-5xl font-bold text-foreground mb-4'>
                 {headerTitle}
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl mx-auto px-8'>
