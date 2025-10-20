@@ -71,26 +71,24 @@ const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className={cn("w-6 h-6", isScrolled ? "text-black" : "text-white")} />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className={cn("w-6 h-6", isScrolled ? "text-black" : "text-white")} />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-md">
+          <div className={cn(
+            "md:hidden py-4 border-t border-border bg-gray-100/95 backdrop-blur-md"
+          )}>
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors px-4 py-2 ${
-                    isScrolled 
-                      ? "text-black hover:text-gray-700" 
-                      : "text-white hover:text-gray-200"
-                  }`}
+                  className={`text-sm font-medium transition-colors px-4 py-2 text-gray-900 hover:text-gray-700`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
